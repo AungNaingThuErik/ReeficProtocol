@@ -9,9 +9,9 @@
 }
 
 :root {
-    --dark: #44465F;
+    --dark: #322732;
     --light: #F0EEF5;
-    --purple-dark: #8A3892;
+    --purple-dark: #5A1F5F;
     --purple-light: #AC569A;
     --green: #9BC846;
     --cyan: #49ADAD;
@@ -26,9 +26,8 @@
 
 html {
     font-family: "Montserrat", sans-serif;
-    font-size: 10px;
     scroll-behavior: smooth;
-    transition: 0.3s ease;
+    transition: 0.5s ease;
 }
 
 h1,
@@ -37,23 +36,23 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: 0;
+    letter-spacing: 0.5;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     position: relative;
-    padding: 30px 0 15px 0;
+    padding: 20px 0 10px 0;
     font-weight: normal;
     line-height: 120% !important;
     color: var(--white);
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 600;
 }
 
@@ -63,22 +62,24 @@ h3 {
 }
 
 h4 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 600;
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
 h6 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 p {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: normal;
     color: var(--white);
@@ -92,7 +93,7 @@ p {
     background: transparent;
     color: var(--gray);
     text-align: center;
-    padding: 0 80px;
+    padding: 70px 80px;
 }
 
 svg {
@@ -121,65 +122,97 @@ a.button1 {
 }
 
 a.button1:hover {
-    color: #000000;
-    background-color: #FFFFFF;
+    color: var(--black);
+    background-color: var(--white);
 }
 
 
 /* Nav */
 
 nav {
-    background: var(--dark);
-    height: 80px;
-    width: 100%;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 5%;
+    height: 100px;
+    background-color: var(--dark);
 }
 
-nav ul {
-    float: right;
-    margin-right: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-
-/* label.logo {
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-
-a.active,
-a:hover {
-    background: transparent;
-    border: 2px solid var(--white);
-    transition: .25s ease;
-}
-
-.checkbtn {
-    font-size: 30px;
+nav .logo {
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    text-transform: uppercase;
     color: var(--white);
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
 }
 
-#check {
+nav .logo-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-right: 6px;
+}
+
+nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .links li {
+    list-style: none;
+}
+
+nav .links a {
+    display: block;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav .links a:hover {
+    border: solid 2px var(--white);
+    border-radius: 3px;
+    transition: .3s ease filter;
+}
+
+#nav-toggle {
+    position: absolute;
+    top: -100px;
+}
+
+nav .icon-burger {
     display: none;
-} */
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .icon-burger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
 
 
 /* End Nav */
@@ -201,20 +234,28 @@ a:hover {
     text-align: center;
 }
 
-li {
+#section1 h1 {
+    margin: 50px 0 0 0;
+}
+
+#section1 p {
+    max-width: 1180px;
+}
+
+#section1 li {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 2.5em;
     list-style-type: none;
     padding: 1em;
     text-transform: uppercase;
 }
 
-li span {
+#section1 li span {
     display: block;
-    font-size: 4.5rem;
+    font-size: 6rem;
 }
 
-.section-button {
+#section1 .section-button {
     display: flex;
     flex-direction: row;
     padding: 20px 0px;
@@ -222,12 +263,13 @@ li span {
 
 #section1 a.button1 {
     background-color: var(--green);
-    color: var(--purple);
+    color: var(--purple-dark);
+    font-size: 2.5em;
 }
 
 #section1 a.button1:hover {
-    color: #000000;
-    background-color: #FFFFFF;
+    color: var(--black);
+    background-color: var(--white);
 }
 
 
@@ -244,33 +286,41 @@ li span {
     background: var(--cyan);
 }
 
-#section2 h5 {
+#section2 h2 {
     color: var(--purple-dark);
-    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+#section2 .video-container {
+    width: 60%;
+    padding-top: 36.25%;
+    height: 0px;
+    position: relative;
 }
 
 #section2 .videoclip {
-    width: 60%;
-    height: 400px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .social-icon {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 10px
 }
 
 .social-item {
-    margin: 0 px;
+    flex: 1 0 20%;
+    width: 5rem;
+    margin: 5px;
 }
 
 .social-item img {
     filter: grayscale(1);
-    transition: .3s ease filter;
+    transition: .2s ease filter;
 }
 
 #section2 .social-item:hover img {
@@ -336,7 +386,6 @@ li span {
 
 #section4 .section-div {
     background: var(--light-gray);
-    /* background-image: url("./img/meet-the-cast-bg.png"); */
 }
 
 .section4-curved {
@@ -467,7 +516,7 @@ li span {
 
 #section6 .section-div {
     background: var(--soft-gray);
-    background-image: url("img/token-generation-bg.png");
+    /* background-image: url("img/token-generation-bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -680,8 +729,14 @@ li span {
 /* The circles on the timeline */
 
 #section7 p {
-    color: var(--dak);
+    color: var(--dark);
     font-size: 1.2rem;
+}
+
+#section7 h6 {
+    color: var(--dark);
+    font-size: 1.8rem;
+    padding-right: 1rem;
 }
 
 .container::after {
@@ -715,9 +770,9 @@ li span {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid white;
+    border: medium solid var(--white);
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent var(--white) transparent transparent;
 }
 
 
@@ -737,7 +792,8 @@ li span {
     justify-content: center;
     text-align: left;
     padding: 10px 30px;
-    background-color: white;
+    width: 100%;
+    background-color: var(--white);
     position: relative;
 }
 
@@ -755,45 +811,58 @@ li span {
     background: var(--white);
 }
 
-#section8 h3 {
+#section8 .section-div h3 {
     color: var(--purple-dark);
-    font-weight: 600;
 }
 
-#section8 h5 {
+#section8 .section-div h5 {
     color: var(--purple-dark);
-    font-weight: 600;
+    font-size: 2rem;
+}
+
+#section8 .section-div h6 {
+    color: var(--dark);
+    font-size: 1rem;
 }
 
 #section8 .cast-row {
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
 }
 
 #section8 .cast-column {
-    flex-direction: column;
-    width: 30%;
-    max-width: 50%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+    flex: 1 0 100px;
+    margin: 5px;
 }
 
-.cast-container {
+#section8 .cast-container {
     padding: 0 16px;
+}
+
+#section8 .cast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #section8 img {
     width: 100%;
     max-width: 100%;
     height: auto;
-    object-fit: contain;
+    border: 1px solid var(--light-gray);
 }
 
 #section8 p {
     color: var(--gray);
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 
@@ -849,12 +918,6 @@ li span {
     background: var(--purple-dark);
 }
 
-#section10 h3,
-h5 {
-    color: var(--white);
-    font-weight: 600;
-}
-
 #section10 a.button1 {
     display: inline-block;
     padding: 0.8em 2em;
@@ -887,12 +950,6 @@ h5 {
 
 .section11-curved {
     background: var(--dark-blue);
-}
-
-#section11 h3,
-h5 {
-    color: var(--white);
-    font-weight: 600;
 }
 
 .form-style-1 {
@@ -1019,35 +1076,46 @@ select {
 /* Tablet */
 
 @media only screen and (min-width:321px) and (max-width:768px) {
-    /* .checkbtn {
-        display: block;
+    nav .logo {
+        float: none;
+        width: auto;
+        justify-content: center;
     }
-    ul {
+    nav .links {
+        float: none;
         position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, .8);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
     }
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a {
+    nav .links a {
         font-size: 20px;
     }
-    a:hover,
-    a.active {
-        background: none;
-        color: #0082e6;
+    nav :checked~.links {
+        bottom: 0;
     }
-    #check:checked~ul {
-        left: 0;
-    } */
+    nav .icon-burger {
+        display: block;
+    }
+    nav :checked~.icon-burger .line:nth-child(1) {
+        transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked~.icon-burger .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked~.icon-burger .line:nth-child(2) {
+        opacity: 0;
+    }
     /* Section 1*/
     #section1 .timer {
         color: var(--white);
