@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 600;
 }
 
@@ -119,6 +119,7 @@ a.button1 {
     color: var(--white);
     text-align: center;
     transition: all 0.2s;
+    padding: 10px 25px;
 }
 
 a.button1:hover {
@@ -151,12 +152,12 @@ nav .logo {
     color: var(--white);
 }
 
-nav .logo-image img {
+nav .logo-image .img-fluid {
     width: 50px;
     height: 50px;
     border-radius: 10%;
     overflow: hidden;
-    margin-top: -6px;
+    margin-top: 6px;
     margin-right: 6px;
 }
 
@@ -252,19 +253,12 @@ nav .icon-burger .line {
 
 #section1 li span {
     display: block;
-    font-size: 6rem;
-}
-
-#section1 .section-button {
-    display: flex;
-    flex-direction: row;
-    padding: 20px 0px;
+    font-size: 5rem;
 }
 
 #section1 a.button1 {
     background-color: var(--green);
     color: var(--purple-dark);
-    font-size: 2.5em;
 }
 
 #section1 a.button1:hover {
@@ -797,6 +791,11 @@ nav .icon-burger .line {
     position: relative;
 }
 
+.content:hover {
+    background-color: var(--green);
+    color: var(--purple-dark);
+}
+
 
 /* End Section 7 */
 
@@ -880,16 +879,74 @@ nav .icon-burger .line {
     font-weight: 600;
 }
 
-.gallery {
-    background: #EEE;
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
 }
 
-.gallery-cell {
-    width: 66%;
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider {
+    background: white;
+    -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    counter-increment: gallery-cell;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+}
+
+.slider::before,
+.slider::after {
+    background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 200px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider .slide {
+    height: 200px;
+    width: 250px;
 }
 
 
@@ -1040,6 +1097,77 @@ select {
 
 /* End Section 11 */
 
+
+/* Footer */
+
+footer .footer-basic {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .footer-logo {
+    flex: 1;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+footer .footer-image .img-fluid {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+footer .footer-logo p {
+    color: var(--gray);
+}
+
+footer .list-inline {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    list-style: none;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+footer .list-inline-item {
+    padding: 0 10px;
+}
+
+footer ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+footer ul a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+
+/* End Footer */
+
 @media only screen and (max-width: 600px) {
     .main-parent {
         flex-direction: column;
@@ -1054,15 +1182,12 @@ select {
         padding-left: 70px;
         padding-right: 25px;
     }
-    /* Make sure that all arrows are pointing leftwards */
     .container::before {
         left: 60px;
         border: medium solid white;
         border-width: 10px 10px 10px 0;
         border-color: transparent white transparent transparent;
     }
-    /* Make sure all circles are at the same spot */
-    /* Make all right containers behave like the left ones */
     .right {
         left: 0%;
     }
