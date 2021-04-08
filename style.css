@@ -27,7 +27,7 @@
 html {
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
-    transition: 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 h1,
@@ -44,10 +44,11 @@ h6 {
     font-weight: normal;
     line-height: 120% !important;
     color: var(--white);
+    transition: all 0.5s ease;
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: bold;
 }
 
@@ -399,18 +400,18 @@ nav .icon-burger .line {
 
 #section4 .news-title {
     text-align: left;
-    padding: 2px 15px;
+    padding: 3px 0;
     color: var(--black);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 #section4 .read-more {
     text-align: left;
-    padding: 2px 15px;
+    padding: 3px 0;
     color: var(--gray);
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .news-image {
@@ -423,13 +424,14 @@ nav .icon-burger .line {
 
 .main-parent {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
 .main-parent>div {
     flex: 1;
     margin: 20px 5px;
-    min-width: 100px;
     position: relative;
 }
 
@@ -850,7 +852,7 @@ nav .icon-burger .line {
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 80%;
 }
 
 #section8 img {
@@ -879,7 +881,7 @@ nav .icon-burger .line {
     max-width: 400px;
     height: 420px;
     perspective: 1000px;
-    margin: 5px 30px;
+    padding: 5px 30px;
 }
 
 
@@ -976,7 +978,7 @@ nav .icon-burger .line {
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 1440px;
+    width: 760px;
 }
 
 .slider::before,
@@ -1227,52 +1229,62 @@ footer ul a:hover {
 }
 
 .copyright {
-    margin-top: 15px;
     text-align: center;
     font-size: 13px;
     color: #aaa;
+    margin-top: 15px;
     margin-bottom: 0;
+    padding: 0 0 10px 0;
 }
 
 
 /* End Footer */
 
-@media only screen and (max-width: 600px) {
-    .slider {
-        width: 640px;
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+
+/* If the screen size is 760px or less, set the font-size of <div> to 30px */
+
+@media only screen and (max-width: 760px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        transition: all 0.5s ease;
     }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    h4 {
+        font-size: 2.2rem;
+    }
+    h5 {
+        font-size: 2rem;
+    }
+    h6 {
+        font-size: 1.75rem;
+    }
+    p {
+        font-size: 1.35rem;
+        transition: all 0.5s ease;
+    }
+    .cart,
+    .news,
+    .section5-row,
+    .section6-row,
+    .sales,
     .main-parent {
         flex-direction: column;
     }
-    /* Place the timelime to the left */
-    .timeline::after {
-        left: 31px;
-    }
-    /* Full-width containers */
-    .container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    .container::before {
-        left: 60px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-    }
-    .right {
-        left: 0%;
-    }
-    .cast-column {
-        width: 100%;
-        display: block;
-    }
-}
-
-
-/* Tablet */
-
-@media only screen and (min-width:321px) and (max-width:768px) {
     nav .logo {
         float: none;
         width: auto;
@@ -1313,8 +1325,7 @@ footer ul a:hover {
     nav :checked~.icon-burger .line:nth-child(2) {
         opacity: 0;
     }
-    /* Section 1*/
-    #section1 .timer {
+    .timer {
         color: var(--white);
         margin: 0 auto;
         text-align: center;
@@ -1333,39 +1344,29 @@ footer ul a:hover {
     #section1 li span {
         font-size: 3.375rem;
     }
-    /* End Section 1*/
-    /* Section 2 */
-    #section2 .videoclip {
-        width: 60% auto;
-        height: 200px;
+    .cart-image {
+        width: 60%;
+        max-width: 100%;
+        height: auto;
+        padding: 10px 0;
     }
-    /* End Section 2 */
-    /* Section 3 */
-    .cart,
-    .news,
-    .section5-row,
-    .section6-row,
-    .cast-row {
-        flex-direction: column;
+    .timeline::after {
+        left: 31px;
     }
-    /* End Section 3 */
-    /* Section 4 */
-    #section4 .news-item .news-title {
-        text-align: center;
-        padding: 2px 24px;
-        color: var(--black);
-        font-size: 1rem;
-        font-weight: 600;
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
     }
-    #section4 .news-item .read-more {
-        text-align: center;
-        padding: 2px 15px;
-        color: var(--gray);
-        font-size: 1rem;
-        font-weight: 300;
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
     }
-    /* End Section 4 */
-    /* Section6 */
+    .right {
+        left: 0%;
+    }
     #section6 .timer {
         color: var(--purple-dark);
         margin: 0 auto;
@@ -1385,9 +1386,7 @@ footer ul a:hover {
     #section6 li span {
         font-size: 3.375rem;
     }
-    /* End Section6 */
-    /* Cast */
     .slider {
-        width: 640px;
+        width: 440px;
     }
 }
