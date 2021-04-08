@@ -908,7 +908,8 @@ nav .icon-burger .line {
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
+    padding: 0 20px;
 }
 
 #section8 img {
@@ -933,11 +934,10 @@ nav .icon-burger .line {
 
 .flip-box {
     background-color: transparent;
-    width: 400px;
-    max-width: 400px;
+    width: 320px;
+    max-width: 350px;
     height: 420px;
     perspective: 1000px;
-    padding: 5px 30px;
 }
 
 
